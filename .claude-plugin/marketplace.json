@@ -1,0 +1,12 @@
+{
+  "name": "nielebock-skills",
+  "description": "Plugins e skills pessoais do Claude Code.",
+  "owner": { "name": "Carlos Nielebock" },
+  "plugins": [
+    {
+      "name": "jev",
+      "description": "Usar o Jev (modelo System One da TypeSafe) pelo AI Gateway da Vercel.",
+      "source": "./plugins/jev"
+    }
+  ]
+}
