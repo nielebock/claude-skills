@@ -1,6 +1,6 @@
 {
   "name": "jev",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Usar o Jev (modelo System One da TypeSafe) pelo AI Gateway da Vercel.",
   "license": "MIT"
 }
