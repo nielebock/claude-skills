@@ -1,0 +1,9 @@
+{
+  "name": "jev-router",
+  "version": "0.1.0",
+  "description": "Roteador: o Jev dimensiona cada pedido e o Claude recebe a sugestão de delegar a um agente Haiku, Sonnet ou Opus.",
+  "license": "MIT",
+  "author": {
+    "name": "Carlos Nielebock"
+  }
+}
