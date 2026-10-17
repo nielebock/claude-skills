@@ -9,6 +9,6 @@ O Claude Code não troca de modelo por mensagem, e um hook não muda o modelo da
 ## Uso
 
 - `/jev-router:on`, `/jev-router:off`, `/jev-router:status`
-- Precisa de `AI_GATEWAY_API_KEY` no ambiente do Claude Code. Sem chave, lentidão (4 s) ou erro, a mensagem segue normal.
+- Usa `AI_GATEWAY_API_KEY` do ambiente ou, se faltar, de `~/.jev_env`; sem nenhuma, tenta sem cabeçalho (proxy da nuvem). Sem chave, lentidão (4 s) ou erro, a mensagem segue normal.
 - Ignoradas: mensagens começando com `/` ou `!`, com menos de 20 caracteres, ou com `#privado` / `[privado]`.
 - Log em `~/.claude/jev-router/log.jsonl` (sem o texto das mensagens). Outra pasta: `JEV_ROUTER_HOME`.

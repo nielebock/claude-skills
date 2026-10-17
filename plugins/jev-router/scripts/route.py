@@ -51,14 +51,29 @@ def enabled():
         return True
 
 
-def ask(text):
+def api_key():
     key = os.environ.get("AI_GATEWAY_API_KEY")
-    if not key:
-        raise RuntimeError("no key")
+    if key:
+        return key
+    try:  # app aberto fora do terminal não herda o ~/.zshrc; lê só esta variável
+        for line in open(Path.home() / ".jev_env"):
+            name, _, val = line.strip().removeprefix("export ").partition("=")
+            if name == "AI_GATEWAY_API_KEY":
+                return val.strip().strip("'\"") or None
+    except OSError:
+        pass
+    return None
+
+
+def ask(text):
+    headers = {"Content-Type": "application/json"}
+    key = api_key()
+    if key:  # sem chave, tenta sem cabeçalho: na nuvem o proxy do ambiente autentica
+        headers["Authorization"] = f"Bearer {key}"
     req = urllib.request.Request(
         URL,
         data=json.dumps({"model": MODEL, "state": text, "questions": QUESTIONS}).encode(),
-        headers={"Content-Type": "application/json", "Authorization": f"Bearer {key}"},
+        headers=headers,
     )
     with urllib.request.urlopen(req, timeout=TIMEOUT) as r:
         return json.load(r)
