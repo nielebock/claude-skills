@@ -1,0 +1,7 @@
+{
+  "name": "jev-router-codex",
+  "version": "0.1.1",
+  "description": "Jev recomenda Luna, Sol ou Astra para agentes auxiliares no Codex.",
+  "skills": "./skills/",
+  "hooks": "./hooks/hooks.json"
+}

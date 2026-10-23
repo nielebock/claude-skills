@@ -1,0 +1,29 @@
+{
+  "name": "nielebock-skills",
+  "plugins": [
+    {
+      "name": "jev",
+      "source": {
+        "source": "local",
+        "path": "./plugins/jev"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "jev-router-codex",
+      "source": {
+        "source": "local",
+        "path": "./plugins/jev-router-codex"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

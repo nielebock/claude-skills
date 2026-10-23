@@ -1,0 +1,16 @@
+{
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"${PLUGIN_ROOT}/scripts/route.py\"",
+            "timeout": 6,
+            "statusMessage": "Jev: avaliando tamanho da tarefa"
+          }
+        ]
+      }
+    ]
+  }
+}
